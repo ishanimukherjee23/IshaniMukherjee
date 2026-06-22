@@ -2,9 +2,61 @@
 <html>
 <head>
     <title>Ishani Mukherjee</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 900px;
+            margin: auto;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        h1 {
+            margin-bottom: 5px;
+        }
+
+        .tabs {
+            display: flex;
+            border-bottom: 2px solid #ddd;
+            margin-top: 20px;
+        }
+
+        .tab-button {
+            padding: 10px 15px;
+            cursor: pointer;
+            border: none;
+            background: none;
+            font-size: 16px;
+            border-bottom: 3px solid transparent;
+        }
+
+        .tab-button.active {
+            border-bottom: 3px solid #333;
+            font-weight: bold;
+        }
+
+        .tab-content {
+            display: none;
+            padding-top: 20px;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .footer {
+            margin-top: 40px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 10px 0;
+        }
+    </style>
 </head>
 
-<body style="font-family: Arial; max-width: 800px; margin: auto; line-height: 1.6;">
+<body>
 
     <h1>Ishani Mukherjee</h1>
     <p><b>Postdoctoral Associate</b><br>
@@ -12,27 +64,92 @@
 
     <hr>
 
-    <h2>About Me</h2>
-    <p>
-        I study fish behavior, collective movement, and energetics under environmental change.
-    </p>
+    <!-- Tabs -->
+    <div class="tabs">
+        <button class="tab-button active" onclick="openTab(event, 'research')">Research Interests</button>
+        <button class="tab-button" onclick="openTab(event, 'publications')">Publications</button>
+        <button class="tab-button" onclick="openTab(event, 'art')">Art</button>
+    </div>
 
-    <h2>Research Interests</h2>
-    <ul>
-        <li>Collective behaviour</li>
-        <li>Predator-prey interactions</li>
-        <li>Fish energetics</li>
-        <li>Climate change ecology</li>
-    </ul>
+    <!-- Research Interests -->
+    <div id="research" class="tab-content active">
+        <h2>Research Interests</h2>
+        <p>
+            I study fish behavior, collective movement, and energetics under environmental change.
+            My work focuses on how ecological pressures shape individual variation and group-level dynamics.
+        </p>
 
-    <h2>Publications</h2>
-    <p>Add your publication list here.</p>
+        <ul>
+            <li>Collective behaviour in fish schools</li>
+            <li>Predator–prey interactions and escape dynamics</li>
+            <li>Energetics and metabolic costs of behaviour</li>
+            <li>Climate change and aquatic ecology</li>
+        </ul>
+    </div>
 
-    <h2>CV</h2>
-    <p><a href="CV.pdf">Download CV</a></p>
+    <!-- Publications -->
+    <div id="publications" class="tab-content">
+        <h2>Publications</h2>
 
-    <h2>Contact</h2>
-    <p>Email: your.email@ufl.edu</p>
+        <ul>
+            <li>
+                Add your publication here (Year). Title of paper. Journal.
+            </li>
+        </ul>
+
+        <p>
+            Google Scholar: 
+            <a href="https://scholar.google.com/" target="_blank">Profile</a>
+        </p>
+
+        <p>
+            ResearchGate: 
+            <a href="https://www.researchgate.net/" target="_blank">Profile</a>
+        </p>
+    </div>
+
+    <!-- Art -->
+    <div id="art" class="tab-content">
+        <h2>Art</h2>
+
+        <p>
+            A small collection of my artwork. More on my external art page:
+            <a href="https://your-art-website-link.com" target="_blank">Art Website</a>
+        </p>
+
+        <!-- Add images here -->
+        <img src="art1.jpg" alt="Art 1">
+        <img src="art2.jpg" alt="Art 2">
+        <img src="art3.jpg" alt="Art 3">
+    </div>
+
+    <!-- CV + Contact -->
+    <div class="footer">
+        <h2>CV</h2>
+        <p><a href="CV.pdf" target="_blank">Download CV</a></p>
+
+        <h2>Contact</h2>
+        <p>Email: your.email@ufl.edu</p>
+    </div>
+
+    <script>
+        function openTab(evt, tabName) {
+            let i, tabcontent, tabbuttons;
+
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].classList.remove("active");
+            }
+
+            tabbuttons = document.getElementsByClassName("tab-button");
+            for (i = 0; i < tabbuttons.length; i++) {
+                tabbuttons[i].classList.remove("active");
+            }
+
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+    </script>
 
 </body>
 </html>
