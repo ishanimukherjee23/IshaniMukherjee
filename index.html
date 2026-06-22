@@ -5,10 +5,12 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            max-width: 900px;
+            max-width: 850px;
             margin: auto;
             line-height: 1.6;
-            padding: 20px;
+            padding: 10px;              /* narrower margins */
+            background-color: #d9ecff; /* light blue background */
+            color: #111;
         }
 
         h1 {
@@ -17,7 +19,7 @@
 
         .tabs {
             display: flex;
-            border-bottom: 2px solid #ddd;
+            border-bottom: 2px solid #aaa;
             margin-top: 20px;
         }
 
@@ -28,6 +30,7 @@
             background: none;
             font-size: 16px;
             border-bottom: 3px solid transparent;
+            font-family: Arial, sans-serif; /* ensure Arial */
         }
 
         .tab-button.active {
@@ -53,6 +56,10 @@
             height: auto;
             margin: 10px 0;
         }
+
+        a {
+            color: #0b4f9c;
+        }
     </style>
 </head>
 
@@ -64,14 +71,12 @@
 
     <hr>
 
-    <!-- Tabs -->
     <div class="tabs">
         <button class="tab-button active" onclick="openTab(event, 'research')">Research Interests</button>
         <button class="tab-button" onclick="openTab(event, 'publications')">Publications</button>
         <button class="tab-button" onclick="openTab(event, 'art')">Art</button>
     </div>
 
-    <!-- Research Interests -->
     <div id="research" class="tab-content active">
         <h2>Research Interests</h2>
         <p>
@@ -87,28 +92,35 @@
         </ul>
     </div>
 
-    <!-- Publications -->
     <div id="publications" class="tab-content">
         <h2>Publications</h2>
 
         <ul>
             <li>
-                Add your publication here (Year). Title of paper. Journal.
+1.	Mukherjee, I & Liao, J (2026). The energetic costs of escaping predation in wild, schooling white mullet (Mugil curema). Journal of Experimental Biology. https://doi.org/10.1242/jeb.252375
+2.	Mukherjee, I., & Bhat, A. (2025). Intra-and inter-species information transfer aids tropical fish shoals in detecting predators and food sources. Behavioral Ecology and Sociobiology, 79(11), 1-13. https://doi.org/10.1007/s00265-025-03651-y
+3.	Mukherjee, I., & Bhat, A. (2024). The impact of predators and vegetation on shoaling in wild zebrafish. Royal Society Open Science, 11(9), 240760. https://doi.org/10.1098/rsos.240760
+4.	Mukherjee, I., & Bhat, A. (2024). Shoals in troubled waters? The impact of rising temperatures on metabolism, foraging, and shoaling behavior in mixed‐species shoals. Journal of Fish Biology. https://doi.org/10.1111/jfb.15707
+5.	Mukherjee, I., Malakar, A., Das, D., & Bhat, A. (2024). Use of multimodal sensory cues in predator avoidance by wild-caught zebrafish shoals. Biological Journal of the Linnean Society, 141(3), 364–378. https://doi.org/10.1093/biolinnean/blad103
+6.	Mukherjee, I., & Bhat, A. (2023). What drives mixed-species shoaling among wild zebrafish? The roles of predators, food access, abundance of conspecifics and familiarity. Biology Open. https://doi.org/10.1242/bio.059529
+7.	Mukherjee, I., Das, S., Paul, B., & Annagiri, S. (2023). The impact of prior and current information of a new nest on relocation dynamics in an Indian ant. Ethology. https://doi.org/10.1111/eth.13357
+8.	Mukherjee, I., & Bhat, A. (2021). Temporal patterns in interactions across same- and mixed-sex wild zebrafish dyads. Zebrafish. https://doi.org/10.1089/zeb.2021.0012
+9.	Mukherjee, I., Singh, B. P., & Bhat, A. (in preparation). Effect of nutrient exposure in early life on behaviour in wild zebrafish.
+10.	Mukherjee, I., Daniel, D., & Bhat, A. (in preparation). Differences in wild zebrafish behaviour across natural, semi-natural and laboratory environments.
+
+
             </li>
         </ul>
 
-        <p>
-            Google Scholar: 
-            <a href="https://scholar.google.com/" target="_blank">Profile</a>
+        <p>Google Scholar:
+            <a href="https://scholar.google.com/citations?user=JIIIzSIAAAAJ&hl=en&oi=sra" target="_blank">Profile</a>
         </p>
 
-        <p>
-            ResearchGate: 
+        <p>ResearchGate:
             <a href="https://www.researchgate.net/" target="_blank">Profile</a>
         </p>
     </div>
 
-    <!-- Art -->
     <div id="art" class="tab-content">
         <h2>Art</h2>
 
@@ -117,13 +129,11 @@
             <a href="https://your-art-website-link.com" target="_blank">Art Website</a>
         </p>
 
-        <!-- Add images here -->
         <img src="art1.jpg" alt="Art 1">
         <img src="art2.jpg" alt="Art 2">
         <img src="art3.jpg" alt="Art 3">
     </div>
 
-    <!-- CV + Contact -->
     <div class="footer">
         <h2>CV</h2>
         <p><a href="CV.pdf" target="_blank">Download CV</a></p>
@@ -134,15 +144,13 @@
 
     <script>
         function openTab(evt, tabName) {
-            let i, tabcontent, tabbuttons;
-
-            tabcontent = document.getElementsByClassName("tab-content");
-            for (i = 0; i < tabcontent.length; i++) {
+            let tabcontent = document.getElementsByClassName("tab-content");
+            for (let i = 0; i < tabcontent.length; i++) {
                 tabcontent[i].classList.remove("active");
             }
 
-            tabbuttons = document.getElementsByClassName("tab-button");
-            for (i = 0; i < tabbuttons.length; i++) {
+            let tabbuttons = document.getElementsByClassName("tab-button");
+            for (let i = 0; i < tabbuttons.length; i++) {
                 tabbuttons[i].classList.remove("active");
             }
 
